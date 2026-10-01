@@ -1,7 +1,7 @@
 # Focus — Engineering & Business Rules
 
 ## 1. Product
-Focus is a mobile personal-growth application centered on reading, weekly commitments, daily completion, progress, achievements, and reflection.
+Focus is a mobile personal-growth application centered on reading, weekly commitments, daily completion, progress, and automatic achievements. For the approved v1 scope, follow `docs/BUSINESS_RULES.md` as the authoritative product and data specification.
 
 Product principle:
 > No se trata de ser perfecto todos los días, sino de construir una versión de ti mismo de la que puedas sentirte orgulloso.
