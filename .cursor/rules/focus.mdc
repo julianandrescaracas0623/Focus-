@@ -1,0 +1,69 @@
+---
+description: Project-wide rules for Focus Flutter development with Cursor and Claude.
+alwaysApply: true
+---
+
+# Cursor + Claude Rules
+
+## Core behavior
+- Read CLAUDE.md before making changes.
+- Inspect existing code and conventions first.
+- Make the smallest coherent change that satisfies the requirement.
+- Do not invent APIs, packages, endpoints, schemas, or product behavior.
+- Ask for clarification only when a missing decision blocks implementation; otherwise choose the simplest documented option and record the assumption.
+- Never delete functional code without evidence.
+- Never weaken security or validation to make a feature pass.
+
+## Flutter
+- Follow feature-first layered architecture.
+- Keep domain independent from Flutter where practical.
+- Prefer composition over inheritance.
+- Use null safety and explicit types.
+- Prefer const widgets.
+- Keep build methods cheap and deterministic.
+- Do not perform I/O, networking, database work, or business calculations inside widgets.
+- Reuse shared components and design tokens.
+- Keep UI state separate from domain state.
+
+## Business rules
+- Centralize business rules in domain use cases/entities.
+- Do not duplicate calculations for progress, streaks, achievements, or weekly compliance.
+- Preserve historical records.
+- Use normalized calendar dates for daily habit logic.
+- Treat derived statistics as derived data, not the source of truth.
+
+## Security
+- Never add secrets to source control.
+- Never log credentials, tokens, private reflections, or unnecessary personal data.
+- Validate untrusted input.
+- Use secure storage for sensitive client tokens.
+- HTTPS only for remote APIs.
+- Configure timeouts and controlled retries.
+- Review dependency necessity before adding it.
+
+## Tests
+- Add or update tests when business behavior changes.
+- Cover domain rules with unit tests.
+- Cover important user flows with widget/integration tests.
+- Do not remove tests to make CI pass.
+
+## Git
+- Use small focused commits.
+- Suggested prefixes: feat, fix, refactor, test, docs, chore, security.
+- Do not mix unrelated refactors with features.
+- Before considering work complete:
+  1. dart format --output=none --set-exit-if-changed .
+  2. flutter analyze
+  3. flutter test
+
+## Review checklist
+Before finalizing any change verify:
+- architecture boundaries;
+- business rules;
+- null safety;
+- error handling;
+- security;
+- tests;
+- performance;
+- documentation.
+
